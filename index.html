@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use Coupons — Alibaba.com</title>
+<meta name="description" content="Step-by-step guide to applying coupons on Alibaba.com, for draft orders and Buy Now checkouts.">
+<style>
+  :root{
+    --ink:#16181d; --body:#3c4149; --muted:#6b7280;
+    --line:#e8e9ec; --line-strong:#d8dade; --bg:#ffffff; --bg-soft:#f7f8f9;
+    --accent:#ff6a00; --accent-soft:#fff3eb;
+    --radius:10px;
+    --maxw:900px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+
+  /* ---------- header ---------- */
+  header{padding:56px 0 36px; border-bottom:1px solid var(--line)}
+  .eyebrow{
+    display:flex; align-items:center; gap:8px;
+    font-size:12.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 18px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+  h1{font-size:clamp(30px,4.6vw,42px); line-height:1.15; letter-spacing:-.02em; color:var(--ink); margin:0 0 14px; font-weight:700}
+  .lede{font-size:17px; color:var(--muted); margin:0; max-width:620px}
+
+  /* ---------- quick nav ---------- */
+  .nav-cards{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:32px 0 0}
+  .nav-card{
+    display:block; text-decoration:none; padding:18px 20px; border:1px solid var(--line);
+    border-radius:var(--radius); background:var(--bg-soft); transition:border-color .15s, background .15s;
+  }
+  .nav-card:hover{border-color:var(--line-strong); background:#fff}
+  .nav-card .k{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; display:block; margin-bottom:6px}
+  .nav-card .v{font-size:16px; color:var(--ink); font-weight:600; line-height:1.35}
+  .nav-card .steps{font-size:13px; color:var(--muted); margin-top:4px}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0 8px; scroll-margin-top:20px}
+  section + section{border-top:1px solid var(--line)}
+  .sec-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:8px}
+  .sec-num{
+    flex:0 0 auto; width:30px; height:30px; border-radius:50%; background:var(--accent);
+    color:#fff; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:4px;
+  }
+  h2{font-size:24px; line-height:1.3; color:var(--ink); margin:0; font-weight:700; letter-spacing:-.01em}
+  .sec-intro{margin:14px 0 0; color:var(--body); font-size:16px}
+  .sec-intro b{color:var(--ink); font-weight:600}
+
+  /* ---------- steps ---------- */
+  .step{padding:34px 0; border-top:1px solid var(--line); margin-top:30px}
+  .step:first-of-type{border-top:0}
+  .step-head{display:flex; align-items:baseline; gap:10px; margin-bottom:10px}
+  .step-tag{
+    flex:0 0 auto; font-size:11.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--accent); background:var(--accent-soft); border:1px solid #ffe1cd; border-radius:4px;
+    padding:3px 8px; transform:translateY(-2px);
+  }
+  h3{font-size:18.5px; line-height:1.4; color:var(--ink); margin:0; font-weight:600}
+  .step p{margin:0 0 14px}
+  .step ul{margin:0 0 16px; padding-left:20px}
+  .step li{margin:0 0 8px}
+  .step li b, .step p b{color:var(--ink); font-weight:600}
+
+  /* ---------- screenshots ---------- */
+  .shots{display:flex; gap:16px; align-items:flex-start; margin-top:20px; flex-wrap:wrap}
+  .shot{
+    border:1px solid var(--line-strong); border-radius:8px; overflow:hidden; background:#fff;
+    box-shadow:0 1px 2px rgba(16,24,40,.05); cursor:zoom-in; display:block; padding:0; line-height:0;
+  }
+  .shot img{display:block; width:100%; height:auto}
+  .shot--desk{flex:1 1 480px; min-width:280px}
+  .shot--phone{flex:0 0 auto; width:190px; border-radius:16px; padding:5px; background:#fff}
+  .shot--phone img{border-radius:11px}
+  .shot:hover{border-color:#c3c7cd}
+  .caption{font-size:12.5px; color:var(--muted); margin:10px 0 0}
+
+  /* ---------- video ---------- */
+  .video-row{
+    display:flex; gap:26px; align-items:flex-start; margin:26px 0 4px;
+    padding:20px; border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-soft);
+  }
+  .video-frame{
+    flex:0 0 auto; width:196px; border-radius:16px; overflow:hidden; background:#000;
+    box-shadow:0 6px 18px rgba(16,24,40,.14); line-height:0;
+  }
+  .video-frame video{display:block; width:100%; height:auto; border-radius:16px}
+  .video-meta{flex:1 1 auto; min-width:0; padding-top:4px}
+  .video-meta .label{
+    font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+    color:var(--accent); display:block; margin-bottom:6px;
+  }
+  .video-meta .vt{font-size:16.5px; font-weight:600; color:var(--ink); margin:0 0 8px; line-height:1.4}
+  .video-meta p{font-size:14px; color:var(--muted); margin:0 0 10px}
+  .video-meta a{color:var(--ink); text-decoration:underline; text-decoration-color:var(--line-strong); text-underline-offset:2px; font-size:13.5px}
+  .video-meta a:hover{text-decoration-color:var(--accent)}
+
+  /* ---------- note ---------- */
+  .note{
+    margin:26px 0 0; padding:18px 20px; background:var(--bg-soft); border:1px solid var(--line);
+    border-left:3px solid var(--accent); border-radius:var(--radius);
+  }
+  .note h4{margin:0 0 10px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); font-weight:700}
+  .note ul{margin:0; padding-left:18px}
+  .note li{font-size:14.5px; color:var(--body); margin:0 0 7px}
+  .note li:last-child{margin-bottom:0}
+
+  /* ---------- footer ---------- */
+  footer{padding:44px 0 60px; margin-top:44px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{margin:0 0 6px}
+
+  /* ---------- lightbox ---------- */
+  .lb{
+    position:fixed; inset:0; background:rgba(12,14,18,.9); display:none; align-items:center; justify-content:center;
+    padding:32px; z-index:100; cursor:zoom-out;
+  }
+  .lb.open{display:flex}
+  .lb img{max-width:100%; max-height:100%; border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .lb-close{
+    position:absolute; top:18px; right:22px; background:none; border:0; color:#fff; font-size:30px;
+    line-height:1; cursor:pointer; opacity:.75; padding:6px;
+  }
+  .lb-close:hover{opacity:1}
+
+  @media (max-width:640px){
+    header{padding:40px 0 28px}
+    .nav-cards{grid-template-columns:1fr}
+    .shot--phone{width:150px}
+    section{padding:40px 0 8px}
+    .video-row{flex-direction:column; gap:18px; padding:16px}
+    .video-frame{width:100%; max-width:240px}
+  }
+  @media print{
+    .nav-cards,.lb{display:none}
+    .step{page-break-inside:avoid}
+    body{font-size:12pt}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow"><span class="dot"></span>Alibaba.com · Buyer help</p>
+    <h1>How to Use Coupons</h1>
+    <p class="lede">Coupons can be applied on a draft order before you pay, or are applied automatically when you check out with Buy Now or from your cart. Pick the flow below that matches your order.</p>
+
+    <nav class="nav-cards" aria-label="Jump to a section">
+      <a class="nav-card" href="#draft-order">
+        <span class="k">Flow A</span>
+        <span class="v">If you’re placing a Draft Order</span>
+        <span class="steps">3 steps · select and apply manually</span>
+      </a>
+      <a class="nav-card" href="#buy-now">
+        <span class="k">Flow B</span>
+        <span class="v">If you’re using Buy Now</span>
+        <span class="steps">4 steps · applied automatically</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ============ FLOW A ============ -->
+  <section id="draft-order">
+    <div class="sec-head">
+      <div class="sec-num">A</div>
+      <h2>If You’re Placing a Draft Order</h2>
+    </div>
+    <p class="sec-intro">Once your order has been created, you can select and apply a coupon on the <b>Order details</b> page before making a payment.</p>
+
+    <div class="video-row">
+      <div class="video-frame">
+        <video controls playsinline preload="metadata" poster="img/step-2.jpg" width="592" height="1280">
+          <source src="video/draft-order.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-meta">
+        <span class="label">Watch</span>
+        <p class="vt">Draft Order walkthrough</p>
+        <p>23 seconds · phone screen recording. Watch how to open the coupon window, pick a coupon, and apply it to your order.</p>
+        <p>Prefer reading? Follow the written steps and screenshots below.</p>
+        <a href="video/draft-order.mp4" download>Download the video (3.6 MB)</a>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 1</span><h3>Open the coupon selection window</h3></div>
+      <div class="shots">
+        <button class="shot shot--desk" onclick="lb(this)">
+          <img src="img/step-1.jpg" alt="Order details page with the Apply coupon and/or credit link next to the payment amount" loading="lazy" width="1600" height="812">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-2.jpg" alt="Mobile view of the Order details payment amount area" loading="lazy" width="900" height="1946">
+        </button>
+      </div>
+      <p style="margin-top:16px">On the <b>Order details</b> page, click or tap “Apply coupon and/or credit” next to the payment amount to open the coupon selection window.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 2</span><h3>Review and select a coupon</h3></div>
+      <div class="shots">
+        <button class="shot shot--desk" onclick="lb(this)">
+          <img src="img/step-3.jpg" alt="Coupon selection window listing available and unavailable coupons" loading="lazy" width="1600" height="805">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-4.jpg" alt="Mobile coupon selection window" loading="lazy" width="900" height="1946">
+        </button>
+      </div>
+      <p style="margin-top:16px">The window displays your coupon options for the current order, with an eligible coupon selected by default. You can keep the default selection or choose another eligible coupon.</p>
+      <ul>
+        <li><b>Available coupons:</b> Review the discount amount, minimum spend, expiration date, and eligible products, then select the coupon you want to use.</li>
+        <li><b>Unavailable coupons:</b> Check the reason shown for each coupon to understand which conditions your order does not meet.</li>
+        <li><b>No coupon:</b> If you prefer not to use a coupon, select “Do not apply this coupon type.”</li>
+      </ul>
+      <p>After making your selection, review the discount and the updated amount due in the payment summary.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 3</span><h3>Apply the coupon and confirm the result</h3></div>
+      <div class="shots">
+        <button class="shot shot--desk" onclick="lb(this)">
+          <img src="img/step-5.jpg" alt="Apply button in the coupon window" loading="lazy" width="1600" height="807">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-6.jpg" alt="Mobile confirmation that the coupon has been applied" loading="lazy" width="900" height="1946">
+        </button>
+      </div>
+      <p style="margin-top:16px">Click or tap “Apply.” You will return to the <b>Order details</b> page, where the selected coupon is applied to your order.</p>
+      <p>Check the message showing that your coupon has been applied, then review the discount and the updated amount due before proceeding with payment.</p>
+
+      <div class="note">
+        <h4>Please note</h4>
+        <ul>
+          <li>A coupon selected by default is not yet applied. Click <b>Apply</b> to confirm your choice.</li>
+          <li>Applying a coupon does not complete your payment. You still need to proceed with payment.</li>
+          <li>Coupon eligibility and the final amount due are subject to the coupon details and the information shown for your order.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLOW B ============ -->
+  <section id="buy-now">
+    <div class="sec-head">
+      <div class="sec-num">B</div>
+      <h2>If You’re Using Buy Now</h2>
+    </div>
+    <p class="sec-intro">When you use Buy Now or check out from your shopping cart, an eligible coupon is applied <b>automatically</b>—there’s no need to add it manually. You can review your savings in the order summary and adjust your coupon selection before submitting your order.</p>
+
+    <div class="video-row">
+      <div class="video-frame">
+        <video controls playsinline preload="metadata" poster="img/step-8.jpg" width="592" height="1280">
+          <source src="video/buy-now.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-meta">
+        <span class="label">Watch</span>
+        <p class="vt">Buy Now walkthrough</p>
+        <p>47 seconds · phone screen recording. See the coupon applied automatically in your cart and at checkout, and how to change it.</p>
+        <p>Prefer reading? Follow the written steps and screenshots below.</p>
+        <a href="video/buy-now.mp4" download>Download the video (9 MB)</a>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 1</span><h3>Check your savings in the shopping cart</h3></div>
+      <div class="shots">
+        <button class="shot shot--desk" onclick="lb(this)">
+          <img src="img/step-7.jpg" alt="Shopping cart with the Order summary showing an automatically applied coupon" loading="lazy" width="1600" height="798">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-8.jpg" alt="Mobile shopping cart coupon information" loading="lazy" width="900" height="1946">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-9.jpg" alt="Mobile order summary with coupon discount" loading="lazy" width="900" height="1946">
+        </button>
+      </div>
+      <p style="margin-top:16px">Select the items you want to purchase in your Shopping cart, then review the coupon information in the Order summary.</p>
+      <ul>
+        <li><b>If you haven’t met the coupon requirements:</b> A message shows how much more you need to spend to qualify. You can click “Add items” to add eligible products.</li>
+        <li><b>If you meet the coupon requirements:</b> The coupon is applied automatically. The order summary displays the coupon discount and your updated subtotal.</li>
+      </ul>
+      <p>Review your selected items, then click “Check out.”</p>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 2</span><h3>Review your discount at checkout</h3></div>
+      <div class="shots">
+        <button class="shot shot--desk" onclick="lb(this)">
+          <img src="img/step-10.jpg" alt="Start order page showing Order discount in the Order summary" loading="lazy" width="1600" height="782">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-11.jpg" alt="Mobile checkout showing the coupon discount" loading="lazy" width="900" height="1946">
+        </button>
+      </div>
+      <p style="margin-top:16px">On the <b>Start order</b> page, review your savings under “Order discount” in the Order summary.</p>
+      <p>The coupon discount has already been deducted from your order amount. No additional confirmation is needed to continue.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 3</span><h3>View or change your coupon if needed</h3></div>
+      <div class="shots">
+        <button class="shot shot--desk" onclick="lb(this)">
+          <img src="img/step-12.jpg" alt="Coupon window opened from the order summary at checkout" loading="lazy" width="1600" height="805">
+        </button>
+        <button class="shot shot--phone" onclick="lb(this)">
+          <img src="img/step-13.jpg" alt="Mobile coupon window with Confirm button" loading="lazy" width="900" height="1948">
+        </button>
+      </div>
+      <p style="margin-top:16px">Click the coupon entry in the order summary to open the coupon window. Review the discount amount, minimum spend, expiration date, and eligible products.</p>
+      <p>If other eligible coupons are available, you can select a different one. If you prefer not to use a coupon, select “Do not apply this coupon type.”</p>
+      <p>After making a change, click “Confirm” to save your selection and return to checkout. If you want to keep the automatically applied coupon, you do not need to open this window.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><span class="step-tag">Step 4</span><h3>Review the total and submit your order</h3></div>
+      <p>Check your shipping address, delivery option, discounts, and Total. Once everything is correct, click “Submit,” then follow the on-screen instructions to complete your payment.</p>
+
+      <div class="note">
+        <h4>Please note</h4>
+        <ul>
+          <li>Coupon eligibility and the final amount due are subject to the coupon details and the information shown at checkout.</li>
+          <li>Some minimum spend requirements exclude shipping fees.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Alibaba.com buyer guide · Coupons</p>
+    <p>Screenshots taken from the Alibaba.com order flow.</p>
+  </footer>
+</div>
+
+<div class="lb" id="lb" onclick="closeLb()">
+  <button class="lb-close" aria-label="Close" onclick="closeLb()">×</button>
+  <img id="lb-img" alt="">
+</div>
+
+<script>
+  function lb(btn){
+    var img = btn.querySelector('img');
+    var l = document.getElementById('lb');
+    document.getElementById('lb-img').src = img.src;
+    document.getElementById('lb-img').alt = img.alt;
+    l.classList.add('open');
+  }
+  function closeLb(){ document.getElementById('lb').classList.remove('open'); }
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLb(); });
+</script>
+</body>
+</html>
