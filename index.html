@@ -63,7 +63,6 @@
   .hd p b{color:var(--body); font-weight:600}
   .card .body{margin-top:auto; display:flex; justify-content:center; align-items:flex-end; gap:8px}
   .card .body .shot{max-width:166px}
-  .card .pair .shot{max-width:96px}
   .card--bare{grid-column:1/-1; background:var(--soft); border-style:dashed; justify-content:flex-start; padding:14px 16px}
   .card--bare .hd{opacity:.95}
 
@@ -85,7 +84,6 @@
   @media (max-width:560px){
     .steps{grid-template-columns:1fr}
     .card .body .shot{max-width:190px}
-    .card .pair .shot{max-width:108px}
   }
   @media (prefers-reduced-motion:reduce){.ring{animation:none}}
   @media print{.jump,.lb{display:none}.card{page-break-inside:avoid}}
@@ -120,7 +118,7 @@
         </div>
         <div class="body">
           <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-2.jpg" alt="left:5%;top:25%;width:90%;height:7%" loading="lazy">
+            <img src="img/step-2.jpg" alt="Order detail page with the discount row and Apply button" loading="lazy">
             <i class="ring" style="left:4%;top:27%;width:92%;height:4%"></i>
           </button>
         </div>
@@ -136,7 +134,7 @@
         </div>
         <div class="body">
           <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-4.jpg" alt="left:4%;top:34%;width:92%;height:18%" loading="lazy">
+            <img src="img/step-4.jpg" alt="Coupon list with an eligible coupon selected" loading="lazy">
             <i class="ring" style="left:4%;top:34.2%;width:92%;height:17%"></i>
           </button>
         </div>
@@ -152,7 +150,7 @@
         </div>
         <div class="body">
           <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-6.jpg" alt="left:4%;top:15%;width:92%;height:9%" loading="lazy">
+            <img src="img/step-6.jpg" alt="Order detail showing the coupon applied to the amount due" loading="lazy">
             <i class="ring" style="left:3.5%;top:16.5%;width:93%;height:8.5%"></i>
           </button>
         </div>
@@ -174,13 +172,9 @@
             <p>Savings show in the bar above <b>Check out</b></p>
           </div>
         </div>
-        <div class="body pair">
+        <div class="body">
           <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-8.jpg" alt="left:1%;top:87%;width:98%;height:6%" loading="lazy">
-            <i class="ring" style="left:1%;top:76.1%;width:98%;height:5.6%"></i>
-          </button>
-          <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-9.jpg" alt="left:1%;top:82.5%;width:98%;height:5.5%" loading="lazy">
+            <img src="img/step-9.jpg" alt="Cart showing the amount saved on your order" loading="lazy">
             <i class="ring" style="left:1%;top:77.3%;width:98%;height:5%"></i>
           </button>
         </div>
@@ -196,7 +190,7 @@
         </div>
         <div class="body">
           <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-11.jpg" alt="left:3%;top:51%;width:94%;height:5%" loading="lazy">
+            <img src="img/step-11.jpg" alt="Checkout order summary with the order discount line" loading="lazy">
             <i class="ring" style="left:3%;top:53.4%;width:94%;height:4.2%"></i>
           </button>
         </div>
@@ -212,7 +206,7 @@
         </div>
         <div class="body">
           <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-13.jpg" alt="left:3%;top:30%;width:93%;height:17%" loading="lazy">
+            <img src="img/step-13.jpg" alt="Coupon window opened at checkout" loading="lazy">
             <i class="ring" style="left:3.5%;top:30.4%;width:93%;height:16.6%"></i>
           </button>
         </div>
