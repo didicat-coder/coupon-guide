@@ -10,72 +10,68 @@
     --ink:#16181d; --body:#3f444c; --muted:#71767f;
     --line:#e9eaed; --line-2:#d9dbe0; --bg:#fff; --soft:#f7f8f9;
     --accent:#ff6a00; --accent-soft:#fff3eb;
-    --maxw:740px;
+    --maxw:900px;
   }
   *{box-sizing:border-box}
   body{
-    margin:0; background:var(--bg); color:var(--body); font-size:15.5px; overflow-x:hidden; line-height:1.62;
+    margin:0; background:var(--bg); color:var(--body); font-size:15px; line-height:1.6;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
   a{color:inherit}
 
   /* header */
-  header{padding:38px 0 22px}
+  header{padding:44px 0 26px}
   .eyebrow{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:0 0 12px; display:flex; align-items:center; gap:7px}
   .eyebrow i{width:5px;height:5px;border-radius:50%;background:var(--accent);display:block}
-  h1{font-size:clamp(25px,3.4vw,31px); line-height:1.16; letter-spacing:-.02em; color:var(--ink); margin:0 0 10px; font-weight:700}
-  .lede{font-size:15.5px; color:var(--muted); margin:0}
-  .jump{display:flex; gap:8px; flex-wrap:wrap; margin:20px 0 0}
-  .jump a{
-    font-size:13.5px; padding:6px 13px; border:1px solid var(--line-2); border-radius:999px;
-    text-decoration:none; color:var(--ink); background:var(--bg); transition:.15s;
-  }
+  h1{font-size:clamp(26px,3.4vw,32px); line-height:1.16; letter-spacing:-.02em; color:var(--ink); margin:0 0 10px; font-weight:700}
+  .lede{font-size:15px; color:var(--muted); margin:0}
+  .jump{display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 0}
+  .jump a{font-size:13.5px; padding:6px 13px; border:1px solid var(--line-2); border-radius:999px; text-decoration:none; color:var(--ink); transition:.15s}
   .jump a:hover{border-color:var(--accent); color:var(--accent)}
 
-  /* section */
-  section{padding:26px 0 2px; border-top:1px solid var(--line); scroll-margin-top:16px}
-  .sec-top{display:grid; grid-template-columns:minmax(0,1fr) 120px; gap:22px; align-items:start; margin-bottom:2px}
-  h2{font-size:21px; line-height:1.28; color:var(--ink); margin:0 0 8px; font-weight:700; letter-spacing:-.01em}
-  .sec-top p{margin:0; font-size:15px; color:var(--muted)}
-  .sec-top b{color:var(--ink); font-weight:600}
+  /* section band */
+  section{padding:26px 0 8px; border-top:1px solid var(--line); scroll-margin-top:16px}
+  .band{
+    display:grid; grid-template-columns:minmax(0,1fr) 96px; gap:24px; align-items:center;
+    background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:14px 18px; margin-bottom:16px;
+  }
+  h2{font-size:20px; line-height:1.3; color:var(--ink); margin:0 0 7px; font-weight:700; letter-spacing:-.01em}
+  .band p{margin:0; font-size:14.5px; color:var(--muted); max-width:44ch}
+  .band b{color:var(--ink); font-weight:600}
 
   /* phone media */
   .phone{
-    width:120px; max-width:100%; border-radius:16px; overflow:hidden; background:#0b0b0d; line-height:0;
-    border:1px solid var(--line-2); box-shadow:0 4px 14px rgba(16,24,40,.10); padding:0;
-    cursor:zoom-in; display:block;
+    width:100%; border-radius:15px; overflow:hidden; background:#0b0b0d; line-height:0;
+    border:1px solid var(--line-2); box-shadow:0 3px 12px rgba(16,24,40,.10);
+    padding:0; display:block; cursor:zoom-in;
   }
-  .phone--sm{width:110px}
-  .phone--video{cursor:default; background:#000}
-  .phone video,.phone img{display:block; width:100%; height:auto}
+  .phone img,.phone video{display:block; width:100%; height:auto}
+  .phone--video{cursor:default; max-width:96px; justify-self:end}
   .phone:hover{border-color:#b9bec6}
+  .phone--video:hover{border-color:var(--line-2)}
 
-  /* steps */
-  .step{
-    display:grid; grid-template-columns:minmax(0,1fr) 110px; gap:20px; align-items:center;
-    padding:15px 0; border-top:1px solid var(--line);
+  /* step cards */
+  .steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-bottom:8px}
+  .card{
+    border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff;
+    display:flex; flex-direction:column; gap:14px;
   }
-  .step:first-of-type{border-top:0}
-  .step--bare{grid-template-columns:minmax(0,1fr)}
-  .step h3{font-size:16.5px; line-height:1.4; color:var(--ink); margin:0 0 6px; font-weight:600; display:flex; gap:9px; align-items:baseline}
-  .step h3 .n{
-    flex:0 0 auto; font-size:11.5px; font-weight:700; letter-spacing:.04em; color:var(--accent);
-    background:var(--accent-soft); border-radius:4px; padding:2px 7px; transform:translateY(-1px);
-  }
-  .step p{margin:0; font-size:15px}
-  .step p b{color:var(--ink); font-weight:600}
-  .media-pair{display:flex; gap:10px; justify-content:flex-end}
-  .media-pair .phone{width:88px}
-  .media-pair .phone--wide{width:102px}
+  .card h3{font-size:15.5px; line-height:1.4; color:var(--ink); margin:0; font-weight:600; display:flex; gap:8px; align-items:baseline}
+  .card h3 .n{flex:0 0 auto; font-size:11px; font-weight:700; letter-spacing:.04em; color:var(--accent); background:var(--accent-soft); border-radius:4px; padding:2px 6px; transform:translateY(-1px)}
+  .card p{margin:8px 0 0; font-size:14px; color:var(--body)}
+  .card p b{color:var(--ink); font-weight:600}
+  .card .note{margin:10px 0 0; font-size:13px; color:var(--muted)}
+  .card .note span{display:block}
+  .card .note span::before{content:"· "; color:var(--accent); font-weight:700}
+  .card .shot{margin-top:auto; display:flex; justify-content:center; align-items:flex-end; gap:8px}
+  .card .shot .phone{max-width:168px}
+  .card .pair .phone{max-width:104px}
+  .card--bare{grid-column:1/-1; background:var(--soft); border-style:dashed}
+  .card--bare p{margin-top:6px}
 
-  /* note */
-  .note{margin:14px 0 0; font-size:14px; color:var(--muted)}
-  .note span{display:block}
-  .note span::before{content:"· "; color:var(--accent); font-weight:700}
-
-  footer{padding:24px 0 40px; margin-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:12.5px}
+  footer{padding:22px 0 42px; margin-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:12.5px}
   footer p{margin:0}
 
   /* lightbox */
@@ -85,27 +81,20 @@
   .lb-x{position:absolute; top:14px; right:18px; background:none; border:0; color:#fff; font-size:28px; line-height:1; cursor:pointer; opacity:.75; padding:6px}
   .lb-x:hover{opacity:1}
 
-  @media (max-width:620px){
-    .sec-top{grid-template-columns:minmax(0,1fr) 128px; gap:16px}
-    .sec-top .phone{width:128px; border-radius:12px}
-    .step{grid-template-columns:minmax(0,1fr) 128px; gap:16px}
-    .phone--sm{width:128px}
-    .media-pair{gap:8px}
-    .media-pair .phone{width:100px}
-    .media-pair .phone--wide{width:102px}
+  @media (max-width:860px){
+    .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card .shot .phone{max-width:180px}
   }
-  @media (max-width:520px){
-    header{padding:30px 0 18px}
-    .sec-top{grid-template-columns:1fr; gap:14px}
-    .sec-top .phone{width:150px}
-    .step{grid-template-columns:1fr; gap:12px; padding:15px 0}
-    .step .phone,.phone--sm{width:150px}
-    .media-pair{justify-content:flex-start; gap:8px}
-    .media-pair .phone,.media-pair .phone--wide{width:104px}
+  @media (max-width:560px){
+    .band{grid-template-columns:minmax(0,1fr) 96px; gap:16px; padding:16px}
+    .band p{font-size:14px}
+    .steps{grid-template-columns:1fr}
+    .card .shot .phone{max-width:190px}
+    .card .pair .phone{max-width:110px}
   }
   @media print{
     .jump,.lb{display:none}
-    .step{page-break-inside:avoid}
+    .card{page-break-inside:avoid}
   }
 </style>
 </head>
@@ -124,7 +113,7 @@
 
   <!-- ========== FLOW A ========== -->
   <section id="supplier">
-    <div class="sec-top">
+    <div class="band">
       <div>
         <h2>If your supplier drafts the order for you</h2>
         <p>Select and apply a coupon on the <b>Order details</b> page before you pay.</p>
@@ -136,38 +125,40 @@
       </div>
     </div>
 
-    <div class="step">
-      <div>
-        <h3><span class="n">01</span>Open the coupon window</h3>
-        <p>Tap <b>Apply coupon and/or credit</b> next to the payment amount.</p>
-      </div>
-      <button class="phone phone--sm" onclick="lb(this)"><img src="img/step-2.jpg" alt="Apply coupon link on the Order details page" loading="lazy"></button>
-    </div>
-
-    <div class="step">
-      <div>
-        <h3><span class="n">02</span>Pick a coupon</h3>
-        <p>An eligible coupon is pre-selected. Tap one to check the discount, minimum spend and expiry — or choose <b>Do not apply this coupon type</b>.</p>
-      </div>
-      <button class="phone phone--sm" onclick="lb(this)"><img src="img/step-4.jpg" alt="Coupon selection list" loading="lazy"></button>
-    </div>
-
-    <div class="step">
-      <div>
-        <h3><span class="n">03</span>Tap Apply</h3>
-        <p>The coupon is applied to your order. Then continue to payment.</p>
-        <div class="note">
-          <span>A pre-selected coupon is not applied until you tap <b>Apply</b>.</span>
-          <span>Applying a coupon does not complete your payment.</span>
+    <div class="steps">
+      <article class="card">
+        <div>
+          <h3><span class="n">01</span>Open the coupon window</h3>
+          <p>Tap <b>Apply coupon and/or credit</b> next to the payment amount.</p>
         </div>
-      </div>
-      <button class="phone phone--sm" onclick="lb(this)"><img src="img/step-6.jpg" alt="Coupon applied on Order details" loading="lazy"></button>
+        <div class="shot"><button class="phone" onclick="lb(this)"><img src="img/step-2.jpg" alt="Apply coupon link on the Order details page" loading="lazy"></button></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3><span class="n">02</span>Pick a coupon</h3>
+          <p>An eligible coupon is pre-selected. Tap one to check the discount, minimum spend and expiry — or choose <b>Do not apply this coupon type</b>.</p>
+        </div>
+        <div class="shot"><button class="phone" onclick="lb(this)"><img src="img/step-4.jpg" alt="Coupon selection list" loading="lazy"></button></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3><span class="n">03</span>Tap Apply</h3>
+          <p>The coupon is applied to your order. Then continue to payment.</p>
+          <div class="note">
+            <span>A pre-selected coupon is not applied until you tap <b>Apply</b>.</span>
+            <span>Applying a coupon does not complete your payment.</span>
+          </div>
+        </div>
+        <div class="shot"><button class="phone" onclick="lb(this)"><img src="img/step-6.jpg" alt="Coupon applied on Order details" loading="lazy"></button></div>
+      </article>
     </div>
   </section>
 
   <!-- ========== FLOW B ========== -->
   <section id="yourself">
-    <div class="sec-top">
+    <div class="band">
       <div>
         <h2>If you place the order yourself</h2>
         <p>Check out with Buy Now or from your cart — an eligible coupon applies <b>automatically</b>.</p>
@@ -179,41 +170,41 @@
       </div>
     </div>
 
-    <div class="step">
-      <div>
-        <h3><span class="n">01</span>Check your cart</h3>
-        <p>The coupon shows in the <b>Order summary</b>. Short of the minimum spend? Tap <b>Add items</b>.</p>
-      </div>
-      <div class="media-pair">
-        <button class="phone phone--wide" onclick="lb(this)"><img src="img/step-8.jpg" alt="Cart with coupon information" loading="lazy"></button>
-        <button class="phone" onclick="lb(this)"><img src="img/step-9.jpg" alt="Order summary with coupon discount" loading="lazy"></button>
-      </div>
-    </div>
-
-    <div class="step">
-      <div>
-        <h3><span class="n">02</span>Review at checkout</h3>
-        <p>The discount is already deducted under <b>Order discount</b>. Nothing else to confirm.</p>
-      </div>
-      <button class="phone phone--sm" onclick="lb(this)"><img src="img/step-11.jpg" alt="Checkout with coupon discount" loading="lazy"></button>
-    </div>
-
-    <div class="step">
-      <div>
-        <h3><span class="n">03</span>Change it if needed</h3>
-        <p>Tap the coupon entry to switch or remove the coupon, then tap <b>Confirm</b>.</p>
-      </div>
-      <button class="phone phone--sm" onclick="lb(this)"><img src="img/step-13.jpg" alt="Coupon window with Confirm button" loading="lazy"></button>
-    </div>
-
-    <div class="step step--bare">
-      <div>
-        <h3><span class="n">04</span>Submit the order</h3>
-        <p>Check the address, delivery option and Total, then tap <b>Submit</b>.</p>
-        <div class="note">
-          <span>Minimum spend may exclude shipping fees.</span>
+    <div class="steps">
+      <article class="card">
+        <div>
+          <h3><span class="n">01</span>Check your cart</h3>
+          <p>The coupon shows in the <b>Order summary</b>. Short of the minimum spend? Tap <b>Add items</b>.</p>
         </div>
-      </div>
+        <div class="shot pair">
+          <button class="phone" onclick="lb(this)"><img src="img/step-8.jpg" alt="Cart with coupon information" loading="lazy"></button>
+          <button class="phone" onclick="lb(this)"><img src="img/step-9.jpg" alt="Order summary with coupon discount" loading="lazy"></button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3><span class="n">02</span>Review at checkout</h3>
+          <p>The discount is already deducted under <b>Order discount</b>. Nothing else to confirm.</p>
+        </div>
+        <div class="shot"><button class="phone" onclick="lb(this)"><img src="img/step-11.jpg" alt="Checkout with coupon discount" loading="lazy"></button></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <h3><span class="n">03</span>Change it if needed</h3>
+          <p>Tap the coupon entry to switch or remove the coupon, then tap <b>Confirm</b>.</p>
+        </div>
+        <div class="shot"><button class="phone" onclick="lb(this)"><img src="img/step-13.jpg" alt="Coupon window with Confirm button" loading="lazy"></button></div>
+      </article>
+
+      <article class="card card--bare">
+        <div>
+          <h3><span class="n">04</span>Submit the order</h3>
+          <p>Check the address, delivery option and Total, then tap <b>Submit</b>.</p>
+          <div class="note"><span>Minimum spend may exclude shipping fees.</span></div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -226,9 +217,10 @@
 </div>
 <script>
   function lb(el){
-    var src = el.querySelector('video') ? el.querySelector('video').getAttribute('poster') : el.querySelector('img').src;
+    var img = el.querySelector('img');
+    if(!img) return;
     var l = document.getElementById('lb'), i = document.getElementById('lb-img');
-    i.src = src; i.alt = '';
+    i.src = img.src; i.alt = img.alt || '';
     l.classList.add('open');
   }
   function closeLb(){ document.getElementById('lb').classList.remove('open'); }
