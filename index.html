@@ -63,7 +63,7 @@
   .hd p b{color:var(--body); font-weight:600}
   .card .body{margin-top:auto; display:flex; justify-content:center; align-items:flex-end; gap:8px}
   .card .body .shot{max-width:166px}
-  .card--bare{grid-column:1/-1; background:var(--soft); border-style:dashed; justify-content:flex-start; padding:14px 16px}
+  .card--bare{background:var(--soft); border-style:dashed; justify-content:flex-start}
   .card--bare .hd{opacity:.95}
 
   footer{padding:20px 0 40px; margin-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:12.5px}
@@ -129,7 +129,7 @@
           <span class="num">2</span>
           <div>
             <h3>Pick a coupon</h3>
-            <p>Tap a coupon to select it — or choose <b>Do not apply</b></p>
+            <p>Tap a coupon to select it, then tap <b>Confirm</b> to apply</p>
           </div>
         </div>
         <div class="body">
@@ -196,25 +196,9 @@
         </div>
       </article>
 
-      <article class="card">
-        <div class="hd">
-          <span class="num">3</span>
-          <div>
-            <h3>Change it if needed</h3>
-            <p>Tap the coupon entry to switch, then tap Confirm</p>
-          </div>
-        </div>
-        <div class="body">
-          <button class="shot" onclick="lb(this)" aria-label="Enlarge screenshot">
-            <img src="img/step-13.jpg" alt="Coupon window opened at checkout" loading="lazy">
-            <i class="ring" style="left:3.5%;top:30.4%;width:93%;height:16.6%"></i>
-          </button>
-        </div>
-      </article>
-
       <article class="card card--bare">
         <div class="hd">
-          <span class="num">4</span>
+          <span class="num">3</span>
           <div>
             <h3>Submit the order</h3>
             <p>Check the address, delivery option and total, then tap Submit</p>
